@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kk Sodap 🤍</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#000;
+color:white;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+.container{
+padding:25px;
+}
+
+h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+p{
+font-size:18px;
+opacity:.8;
+margin-bottom:30px;
+}
+
+button{
+padding:15px 40px;
+border:none;
+border-radius:50px;
+background:white;
+color:black;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.heart{
+position:fixed;
+top:-20px;
+color:#ff4d6d;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+
+#page2{
+display:none;
+padding:20px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container" id="page1">
+<h1>Happy Birthday 🤍</h1>
+<p>for my kk sodap</p>
+<button onclick="openGift()">Buka Hadiah 🎁</button>
+</div>
+
+<div class="container" id="page2">
+<h1>Happy Birthday Baby ❤️</h1>
+<p>Website ini aku buat khusus buat kamu hehe.</p>
+</div>
+
+<script>
+
+function openGift(){
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="block";
+startHeart();
+}
+
+function startHeart(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=Math.random()*25+15+"px";
+
+heart.style.animationDuration=Math.random()*3+2+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+},200);
+
+}
+
+</script>
+
+</body>
+</html>
